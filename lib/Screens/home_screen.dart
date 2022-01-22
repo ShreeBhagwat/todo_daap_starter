@@ -119,6 +119,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  void deleteTodo(String todoInt) async {
+ void deleteTodo(String todoInt) async {
+    // await todoController.deleteTodo(int.parse(todoInt));
   }
 }

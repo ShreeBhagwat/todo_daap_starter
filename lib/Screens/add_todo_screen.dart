@@ -5,6 +5,7 @@ import 'package:todo_daap/Controller/todo_controller.dart';
 import 'package:todo_daap/Helper/constant.dart';
 import 'dart:math' as math;
 
+import 'package:todo_daap/Modals/todo.dart';
 
 class AddNewItemScreen extends StatefulWidget {
   AddNewItemScreen({Key? key}) : super(key: key);
@@ -130,8 +131,8 @@ class _AddNewItemScreenState extends State<AddNewItemScreen> {
                           child: Container(
                               decoration: BoxDecoration(
                                 color: Color(
-                                    (math.Random().nextDouble() * 0xFFFFFF)
-                                        .toInt())
+                                        (math.Random().nextDouble() * 0xFFFFFF)
+                                            .toInt())
                                     .withOpacity(0.3),
                                 borderRadius: BorderRadius.circular(20),
                               ),
@@ -139,25 +140,25 @@ class _AddNewItemScreenState extends State<AddNewItemScreen> {
                               height: 50,
                               child: Center(
                                   child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        categories[index],
-                                        textAlign: TextAlign.left,
-                                        style: TextStyle(
-                                            fontSize: 16,
-                                            fontWeight: FontWeight.w400,
-                                            color: Colors.black),
-                                      ),
-                                      selectedCategoryIndex == index
-                                          ? Container(
-                                        width: 40,
-                                        height: 2,
-                                        color: Colors.black,
-                                      )
-                                          : Container()
-                                    ],
-                                  ))),
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    categories[index],
+                                    textAlign: TextAlign.left,
+                                    style: TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w400,
+                                        color: Colors.black),
+                                  ),
+                                  selectedCategoryIndex == index
+                                      ? Container(
+                                          width: 40,
+                                          height: 2,
+                                          color: Colors.black,
+                                        )
+                                      : Container()
+                                ],
+                              ))),
                         ),
                         onTap: () {
                           selectedCategory = categories[index];
@@ -185,7 +186,18 @@ class _AddNewItemScreenState extends State<AddNewItemScreen> {
   }
 
   void addTodo() async {
-    print('Ading Task');
+    print('Adding Todo');
+    // if (todoTextController.text != "") {
+    //   Todo todo = Todo(
+    //     id: DateTime.now().microsecondsSinceEpoch.toString(),
+    //     category: selectedCategory,
+    //     title: todoTextController.text,
+    //     created: DateTime.now(),
+    //   );
 
+    //   await todoController.addTodo(todo);
+    //   todoTextController.text = '';
+    //   setState(() {});
+    // } else {}
   }
 }
